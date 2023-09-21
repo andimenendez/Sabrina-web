@@ -1,0 +1,607 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: black;
+}
+
+
+/*____________________________________encabezado_____________________________________________*/
+
+header {
+    background-color: black;
+}
+
+header h1 {
+    display: flex;
+    color: rgb(158, 24, 24);
+    text-align: center;
+    justify-content: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+#encabezado a {
+    opacity: 0;
+}
+
+#encabezado a:hover,
+#encabezado a:focus {
+    opacity: 7;
+    text-decoration: none;
+    color: rgb(158, 24, 24);
+}
+
+
+/*____________________________________Menu_____________________________________________*/
+
+#contenedor-menu {
+    position: sticky;
+    top: 0vh;
+}
+
+.icon-remove:before {
+    content: f00d;
+    color: rgb(136, 18, 18);
+}
+
+.icon-menu:before {
+    content: e900;
+    color: rgb(136, 18, 18);
+}
+
+nav li {
+    list-style: none;
+    text-align: center;
+    margin: 0.1em;
+    font-size: 1.2em;
+    flex-grow: 1;
+}
+
+nav li a {
+    width: 100%;
+    text-decoration: none;
+}
+
+
+/*____________________________________inicio____________________________________________*/
+
+#inicio article p {
+    color: white;
+}
+
+#inicio p strong {
+    color: rgb(158, 24, 24);
+    text-align: center;
+}
+
+hr {
+    border: thin dashed rgb(158, 24, 24);
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+}
+
+
+/*____________________________tabla de protagonistas y temporadas_____________________________________________*/
+
+table {
+    border-collapse: collapse;
+    color: white;
+    margin: 0 auto;
+}
+
+table th {
+    border: solid thin rgb(158, 24, 24);
+    color: white;
+}
+
+table td {
+    border: solid thin rgb(158, 24, 24);
+}
+
+
+/*____________________________________Suscripcion_____________________________________________*/
+
+label {
+    color: white;
+}
+
+input {
+    color: black;
+}
+
+#pais {
+    color: black;
+}
+
+h2 {
+    color: wheat;
+    text-align: center;
+    margin-top: 4vh;
+    margin-bottom: 4vh;
+    padding: 1em;
+}
+
+@media screen and (min-width:320px) {
+    /*____________________________________encabezado_____________________________________________*/
+    #encabezado h1 {
+        font-size: 1.8em;
+        padding: 0.2em;
+        padding-bottom: 0.8em;
+        text-align: center;
+    }
+    /*____________________________________Menu_____________________________________________*/
+    span {
+        font-size: 1.8em;
+    }
+    #contenedor-menu {
+        width: 100%;
+        background-color: black;
+        font-size: 0.8em;
+        text-decoration: none;
+        padding: 0.6vw;
+    }
+    #contenedor-menu a {
+        background-color: black;
+        font-size: 1.1em;
+        text-decoration: none;
+        padding: 0.4vw;
+    }
+    #menu a {
+        background-color: rgb(158, 24, 24);
+        color: blanchedalmond;
+        display: block;
+        text-align: center;
+        margin-bottom: 0.1em;
+    }
+    #contenedor-enlaces {
+        width: 100%;
+    }
+    #desplegar {
+        display: block;
+        background-color: black;
+    }
+    #ocultar {
+        display: none;
+        background-color: black;
+    }
+    #contenedor-menu #contenedor-enlaces {
+        height: 0;
+        transition: height 0.5s ease;
+        overflow: hidden;
+    }
+    #contenedor-menu:target #desplegar {
+        display: none;
+    }
+    #contenedor-menu:target #ocultar {
+        display: block;
+    }
+    #contenedor-menu:target #contenedor-enlaces {
+        height: 25vh;
+        transition: heigth 0.5s ease;
+    }
+    /*____________________________________inicio_____________________________________________*/
+    #imagen img {
+        margin-top: 0.5em;
+        margin-bottom: 0.5em;
+        width: 100%;
+        border-top: thin solid rgb(158, 24, 24);
+        border-bottom: thin solid rgb(158, 24, 24);
+        ;
+    }
+    #texto {
+        width: 90%;
+        margin: 0 auto;
+        text-align: justify;
+    }
+    /*____________________________________tabla personajes y temporadas _____________________________________________*/
+    table {
+        padding-top: 3em;
+        width: 90%;
+        margin: 0 auto;
+        font-size: 1em;
+    }
+    tr {
+        display: flex;
+        flex-direction: column;
+        border: solid thin rgb(185, 23, 23);
+        margin-top: 1em;
+    }
+    table td {
+        display: flex;
+        align-items: center;
+    }
+    thead {
+        display: none;
+    }
+    td:nth-child(odd):before,
+    td:nth-child(even):before {
+        background-color: rgb(158, 24, 24);
+        color: whitesmoke;
+        margin-right: 0.5em;
+        padding: 0.1em;
+    }
+    /*Titulos para la tabla de personajes*/
+    #tabla-personajes td:nth-of-type(2):before {
+        content: "Personaje:";
+    }
+    #tabla-personajes td:nth-of-type(3):before {
+        content: "Actor/actriz:";
+    }
+    #tabla-personajes td:nth-of-type(4):before {
+        content: "ocupacion";
+    }
+    #tabla-personajes td:nth-of-type(5):before {
+        content: "historia:";
+    }
+    #tabla-personajes td:nth-of-type(6):before {
+        content: "parentezco:";
+    }
+    /*Titulos para la tabla de temporadas*/
+    #tabla-temporada td:nth-of-type(1):before {
+        content: "N° de temporada:";
+    }
+    #tabla-temporada td:nth-of-type(2):before {
+        content: "capitulos:";
+    }
+    #tabla-temporada td:nth-of-type(3):before {
+        content: "años de estreno:";
+    }
+    /*____________________________________imagen de la tabla _____________________________________________*/
+    table img {
+        width: 80%;
+        margin: 0 auto;
+    }
+    table iframe {
+        margin: 0 auto;
+        width: 80%;
+        height: 48vh;
+    }
+    /*____________________________________Merchandising_____________________________________________*/
+    .galeria {
+        width: 95%;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+    }
+    .galeria p {
+        padding-bottom: 1.5em;
+        color: whitesmoke;
+        text-align: center;
+        width: 50%;
+    }
+    .contenedor-imagenes {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 95%;
+        padding-bottom: 0.4em;
+        border: thin solid brown;
+        flex-wrap: wrap;
+        margin: 0 auto;
+    }
+    .galeria figure {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+    .contenedor-imagenes img {
+        width: 90%;
+        height: 40vh;
+        margin-top: 1.5em;
+        border: 0.1em solid rgb(158, 24, 24);
+    }
+    /*____________________________________Suscripcion _____________________________________________*/
+    form legend {
+        color: whitesmoke;
+        text-align: center;
+        font-size: 1.5em;
+    }
+    form {
+        width: 90%;
+        margin: 0 auto;
+    }
+    form input[type=text],
+    form input[type=email],
+    form label,
+    form select {
+        display: block;
+        font-size: 1em;
+        padding: 0.2em;
+        width: 100%;
+        margin-top: 1vh;
+    }
+    form .boton-form {
+        background-color: rgb(158, 24, 24);
+        color: whitesmoke;
+        display: block;
+        width: 100%;
+        padding: 0.2em;
+        font-size: 1em;
+        margin-top: 1.5vh;
+        margin-bottom: 1vh;
+    }
+    form input[type=text],
+    form input[type=email],
+    form select {
+        border: #000000 solid 0.02rem;
+        margin-bottom: 1vh;
+    }
+}
+
+@media screen and (min-width:768px) {
+    #imagen {
+        margin-top: 2vh;
+    }
+    #contenedor-enlaces a {
+        padding: 0.15em;
+    }
+    #tabla-temporada #tabla-personajes {
+        width: 80%;
+        margin: 0 auto;
+        font-size: 1em;
+        display: flex;
+        align-items: center;
+    }
+    td {
+        display: flex;
+        align-items: center;
+    }
+    table img {
+        width: 60%;
+        margin: 0 auto;
+    }
+    table iframe {
+        width: 60%;
+        height: 50vh;
+        margin: 0 auto;
+    }
+    .galeria p {
+        width: 80%;
+        font-size: 1.1em;
+    }
+    .galeria figure {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        width: 50%;
+    }
+    .contenedor-imagenes img {
+        width: 90%;
+        height: 40vh;
+        margin-top: 1.5em;
+        border: 0.1em solid rgb(158, 24, 24);
+    }
+}
+
+@media screen and (min-width:1024px) {
+    /*______________________Menu_________________________*/
+    #contenedor-enlaces {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: row;
+        height: 6vh;
+    }
+    #contenedor-enlaces li {
+        flex-grow: 1;
+        display: flex;
+        align-items: center;
+    }
+    #contenedor-enlaces a {
+        background-color: rgb(158, 24, 24);
+        color: whitesmoke;
+        transition: color 1s ease-out 0s, background-color 1s ease-out 0s;
+    }
+    #contenedor-enlaces a:hover {
+        color: rgb(158, 24, 24);
+        background-color: black;
+        height: 4vh;
+    }
+    #ocultar,
+    #desplegar {
+        display: none;
+    }
+    #contenedor-menu #contenedor-enlaces {
+        height: 6vh;
+    }
+    #inicio::before,
+    #protagonistas::before,
+    #temporadas::before,
+    #galeria::before,
+    #suscribete::before {
+        display: block;
+        content: "";
+        height: 15vh;
+        margin-top: -15vh;
+        visibility: hidden;
+    }
+    /*______________________Argumento_________________________*/
+    #imagen figure {
+        width: 100%;
+        height: 75vh;
+        margin: 0 auto;
+    }
+    #imagen figure img {
+        height: 75vh;
+    }
+    #texto {
+        margin-top: 1.5em;
+        width: 80%;
+    }
+    /*_____________________tablas_____________________________*/
+    table {
+        width: 95vw;
+        border-collapse: collapse;
+    }
+    thead {
+        display: table-header-group;
+    }
+    tr {
+        display: flex;
+        flex-direction: row;
+        margin-top: 0;
+    }
+    #tabla-personajes td {
+        text-align: justify;
+        width: 30%;
+        height: 22vw;
+        display: flex;
+        justify-content: center;
+        padding: 0.4em;
+    }
+    td img {
+        width: 95%;
+        height: 35vh;
+    }
+    #tabla-personajes th {
+        width: calc(95vw/6);
+    }
+    #tabla-temporada td {
+        width: calc(95vw/4);
+        height: 25vh;
+        text-align: justify;
+        display: flex;
+        justify-content: center;
+        padding: 0.4em;
+    }
+    #tabla-temporada th {
+        width: calc(95vw/4);
+    }
+    td iframe {
+        width: 95%;
+        height: 25vh;
+    }
+    #tabla-personajes td:nth-of-type(2):before {
+        content: none;
+    }
+    #tabla-personajes td:nth-of-type(3):before {
+        content: none;
+    }
+    #tabla-personajes td:nth-of-type(4):before {
+        content: none;
+    }
+    #tabla-personajes td:nth-of-type(5):before {
+        content: none;
+    }
+    #tabla-personajes td:nth-of-type(6):before {
+        content: none;
+    }
+    #tabla-temporada td:nth-of-type(1):before {
+        content: none;
+    }
+    #tabla-temporada td:nth-of-type(2):before {
+        content: none;
+    }
+    #tabla-temporada td:nth-of-type(3):before {
+        content: none;
+    }
+    /*_________________________________________Merchadinsing________________________________________________*/
+    .galeria p {
+        width: 100%;
+    }
+    .galeria figure {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        width: 30%;
+        height: 40vh;
+        margin-top: 2em;
+    }
+    .contenedor-imagenes img {
+        width: 80%;
+        height: 30vh;
+        margin-top: 2em;
+        border: 0.1em solid rgb(158, 24, 24);
+    }
+    /*_________________________________________Suscripcion________________________________________________*/
+    form {
+        width: 60%;
+        padding: 1rem;
+        margin: 0 auto;
+    }
+    form select,
+    form label,
+    form input[type=text],
+    form input[type=email] {
+        display: inline-block;
+        font-size: 1.2rem;
+        width: 70%;
+        margin-bottom: 0.5rem;
+    }
+    form input[type=text],
+    form input[type=email],
+    form select {
+        border: rgb(158, 24, 24) solid 0.05rem;
+    }
+    form label {
+        width: 25%;
+        text-align: right;
+    }
+    form input [type=text]:focus,
+    form input [type=email]:focus,
+    form select:focus {
+        border: rgb(158, 24, 24) solid 0.2rem;
+    }
+    form .boton-form {
+        font-size: 1.2rem;
+        padding-left: 0.4rem;
+        display: inline-block;
+        width: 40%;
+        margin-top: 3em;
+    }
+    fieldset {
+        text-align: center
+    }
+    ;
+}
+
+@media screen and (min-width:1440px) {
+    #encabezado h1 {
+        font-size: 2.5em;
+    }
+    #contenedor-menu a {
+        font-size: 1.6em;
+    }
+    #texto {
+        font-size: 1.5em;
+    }
+    #protagonistas {
+        font-size: 1.5em;
+    }
+    #temporadas {
+        font-size: 1.5em;
+    }
+    #temporadas iframe {
+        padding: 0.2em;
+    }
+    #imagen1 {
+        padding-top: 1.9em;
+    }
+    .galeria p {
+        width: 100%;
+        font-size: 1.5em;
+    }
+    .galeria figure {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        width: 23%;
+        height: 40vh;
+        margin-top: 2em;
+    }
+    .contenedor-imagenes img {
+        width: 80%;
+        height: 25vh;
+        margin-top: 2em;
+        border: 0.1em solid rgb(158, 24, 24);
+    }
+}
